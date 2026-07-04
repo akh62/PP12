@@ -93,7 +93,9 @@ In this exercise you will:
 #### Reflection Questions
 
 1. **What steps are required to open an X11 window and receive events?**
+- Zuerst wird mit XOpenDisplay() eine Verbindung zum X-Server hergestellt. Danach wird ein Fenster erstellt, die gewünschten Ereignisse mit XSelectInput() ausgewählt und das Fenster mit XMapWindow() angezeigt.
 2. **How does the `Expose` event trigger your drawing code?**
+- Das Expose-Ereignis tritt auf, wenn das Fenster sichtbar wird oder neu gezeichnet werden muss. Im Ereignis-Loop wird dieses Ereignis erkannt und der Code zum Zeichnen des Rechtecks ausgeführt.
 
 ---
 
@@ -153,7 +155,9 @@ In this exercise you will:
 #### Reflection Questions
 
 1. **How does GTK’s signal-and-callback mechanism differ from X11’s event loop?**
+- Bei GTK werden Ereignisse automatisch über Signale und Callback-Funktionen verarbeitet. Bei X11 muss das Programm selbst ständig auf Ereignisse warten und sie in einer eigenen Ereignisschleife auswerten.
 2. **Why use `pkg-config` when compiling GTK applications?**
+- pkg-config liefert automatisch die richtigen Compiler- und Linker-Optionen für GTK. Dadurch müssen die benötigten Include-Pfade und Bibliotheken nicht von Hand angegeben werden und das Kompilieren wird einfacher.
 
 ---
 
